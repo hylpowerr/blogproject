@@ -19,7 +19,7 @@ from django.views.generic import TemplateView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^root\.txt$',TemplateView.as_view(template_name='robots.txt', content_type='text/plain')),
+    url(r'^root\.txt$',TemplateView.as_view(template_name='root.txt', content_type='text/plain')),
     url(r'',include('blog.urls')),
     url(r'',include('comments.urls'))
 ]
