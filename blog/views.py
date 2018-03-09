@@ -217,7 +217,7 @@ def index(request):
 
 def root(request):
     # post_list = Post.objects.all()
-    return render(request, '../blogproject/root.txt')
+    return render(request, '../blogproject/../templates/root.txt')
 
 def detail(request,pk):
     post = get_object_or_404(Post,pk=pk)
