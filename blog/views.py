@@ -6,6 +6,8 @@ from comments.forms import CommentForm
 from django.views.generic import ListView,DetailView
 
 # Create your views here.
+
+
 class IndexView(ListView):
     model = Post
     template_name = 'blog/index.html'
@@ -144,16 +146,19 @@ class IndexView(ListView):
 
         return data
 
+
 class CategoryView(IndexView):
 
     def get_queryset(self):
         cate = get_object_or_404(Category, pk=self.kwargs.get('pk'))
         return super(CategoryView, self).get_queryset().filter(category=cate)
 
+
 class TagView(IndexView):
     def get_queryset(self):
         tag = get_object_or_404(Tag,pk=self.kwargs.get('pk'))
         return super(TagView, self).get_queryset().filter(tags=tag)
+
 
 class ArchiveView(IndexView):
     def get_queryset(self):
@@ -203,10 +208,16 @@ class PostDetailView(DetailView):
             'comment_list':comment_list
         })
         return context
+
+
 def index(request):
     post_list = Post.objects.all()
     return render(request,'blog/index.html',context={'post_list':post_list})
 
+
+def root(request):
+    # post_list = Post.objects.all()
+    return render(request, '../root.txt')
 
 def detail(request,pk):
     post = get_object_or_404(Post,pk=pk)

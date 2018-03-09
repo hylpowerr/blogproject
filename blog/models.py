@@ -5,6 +5,8 @@ from django.urls import reverse
 from django.utils.html import strip_tags
 
 # Create your models here.
+
+
 class Category(models.Model):
     """
     Django 要求模型必须继承 models.Model 类。
@@ -19,6 +21,7 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
+
 class Tag(models.Model):
     """
     标签 Tag 也比较简单，和 Category 一样。
@@ -28,6 +31,7 @@ class Tag(models.Model):
 
     def __str__(self):
         return self.name
+
 
 class Post(models.Model):
     """
