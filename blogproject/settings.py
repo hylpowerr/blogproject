@@ -25,7 +25,7 @@ SECRET_KEY = '^ufwrsq+tqk#dpnk7))j2is%&)wr@3)=tp)w6u=p92y=9w9q8c'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost ','119.23.53.164','hylblog.online']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost ','119.23.53.164','www.hylblog.online']
 
 
 # Application definition
